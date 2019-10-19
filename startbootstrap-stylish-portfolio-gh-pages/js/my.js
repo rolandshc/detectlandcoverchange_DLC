@@ -24,12 +24,21 @@ function test_toggle(){
 
 is_forrest = false
 
-function toggle_map(){
+function toggle_map(e){
+    console.log(e)
     is_forrest = !is_forrest
     var img_list = ['img/ee-map.PNG','img/ee-2005.PNG']
     var img_number = ['...','2000']
     var yearFrom = document.getElementById('yearFrom').values
     var yearTo = document.getElementById('yearTo').values
+    // e.addClass('active');
+    if (is_forrest){
+        e.classList.add("active");
+    }else{
+        e.classList.remove("active");
+    }
+    console.log(e.innerHTML)
+    
     document.getElementById('main-img').src=img_list[counter % img_list.length]
     // document.getElementById('main-number').innerHTML=img_number[counter % img_list.length]
     counter++

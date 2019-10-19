@@ -77,7 +77,7 @@ border-right: 1px solid #dee2e6;
 </style>
 
 <body id="page-top" onload="hammer()">
-    <header class="masthead d-flex">
+    <header class="masthead d-flex" >
       <div class="container text-center my-auto">
         <h1 class="mb-1">Land Cover Change Detection</h1>
         <h3 class="mb-5">
@@ -98,16 +98,21 @@ border-right: 1px solid #dee2e6;
               <div id="xCo" style="display:none;">0</div>
               <div id="yCo" style="display:none;">0</div>
         </div>
+        <div class="col" style="padding: 5px;"></div>
         <div class="row">
-            <div class="col-1">
+            <div class="col-4 btn btn-light" onclick="toggle_map(this)">
+                <img src="img/forrest_icon.png" width="50px"/><br/>
+                <label >Forrest</label>        
             </div>
-            <div class="col-11">
-                <ul class="ks-cboxtags">
-                    <li><input type="checkbox" id="chkbox1" value="Forrest" onclick="toggle_map()"><label for="chkbox1">Forrest</label></li>
-                    <li><input type="checkbox" id="chkbox2" value="Water"><label for="chkbox2">Water</label></li>
-                    <li><input type="checkbox" id="chkbox3" value="City"><label for="chkbox3">City</label></li>
-                </ul>
+            <div class="col-4 btn btn-light" onclick="toggle_map(this)">
+                <img src="img/river_icon.png" width="50px" height="50px"/><br/>
+                <label >River</label>        
             </div>
+            <div class="col-4 btn btn-light" onclick="toggle_map(this)">
+                <img src="img/city_icon.png" width="50px"/><br/>
+                <label >City</label>        
+            </div>
+                
         </div>
     </div>
 
