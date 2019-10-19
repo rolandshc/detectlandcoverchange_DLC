@@ -83,3 +83,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
+
+html{
+  scroll-behavior: smooth;
+}
