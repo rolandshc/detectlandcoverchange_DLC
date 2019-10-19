@@ -64,3 +64,17 @@ ul.ks-cboxtags li input[type="checkbox"] {
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   border: 2px solid #e9a1ff;
 }
+
+
+
+#imageContainer
+{
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+}
+
+#main-img
+{
+  height: 200px;
+}

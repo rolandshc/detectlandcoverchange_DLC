@@ -36,10 +36,10 @@ function toggle_map(){
     // alert(counter % img_list.length)
 }
 function toggle_year(){
-    
+
     // var is_forrest = document.getElementById('yearFrom')
     if(!is_forrest){
-        return 
+        return
     }
     var img_list = ['img/ee-2000.PNG','img/ee-2005.PNG','img/ee-2015.PNG']
     var yearFrom = document.getElementById('yearFrom').values
@@ -48,4 +48,82 @@ function toggle_year(){
     // document.getElementById('main-number').innerHTML=img_number[counter % img_list.length]
     counter++
     // alert(counter % img_list.length)
+}
+
+function getPos(e){
+        x = e.clientX || e.touches[0].clientX;
+        y = e.clientY || e.touches[0].clientY;
+    		document.getElementById("xCo").innerHTML= x
+        document.getElementById("yCo").innerHTML= y
+    	}
+
+function stopTracking(){
+    		document.getElementById("main-img").innerHTML="";
+    	}
+
+
+function resizeImg (img)
+            	  {
+                var orignW = document.getElementById('main-img').clientWidth
+                var orignH = document.getElementById('main-img').clientHeight
+                if (orignW > 400 || orignH > 300)
+                {
+                  img.style.height = "200px";
+                  img.style.width  = "350px";
+                }
+                else {
+                  var resize = 550; // resize amount in percentage
+              		var origH  = 200;  // original image height
+              		var origW  = 300; // original image width
+              		var mouseX = parseInt(document.getElementById("xCo").innerHTML);
+              		var mouseY = parseInt(document.getElementById("yCo").innerHTML);
+              		//var newH   = origH * (resize / 100) + "px";
+              		//var newW   = origW * (resize / 100) + "px";
+                  var newH   = origH * (resize / 100) + "px";
+                  var newW   = origW * (resize / 100) + "px";
+                  var newHvalue   = origH * (resize / 100);
+                  var newWvalue   = origW * (resize / 100);
+                  	// Set the new width and height
+              		img.style.height = newH;
+              		img.style.width  = newW;
+              	//	var c = img.parentNode;
+                var left = mouseX * (resize / 100) - (newHvalue / 2) / 2;
+                var top = mouseY * (resize / 100) - (newWvalue / 2) / 2;
+                  document.getElementById('imageContainer').scrollLeft = left;
+                  document.getElementById('imageContainer').scrollTop = top;
+              		// Work out the new center
+              	//	c.scrollLeft = mouseX * (resize / 100) - (newW / 2) / 2;
+              		//c.scrollTop  = mouseY * (resize / 100) - (newH / 2) / 2;
+                  //c.scrollLeft = "400px";
+                  //c.scrollTop  = "0px";
+
+                }
+
+
+            	  }
+
+function hammer(){
+  var myElement = document.getElementById('main-img');
+
+  // We create a manager object, which is the same as Hammer(), but without the presetted recognizers.
+  var mc = new Hammer.Manager(myElement);
+
+
+  // Tap recognizer with minimal 2 taps
+  mc.add( new Hammer.Tap({ event: 'doubletap', taps: 2 }) );
+  // Single tap recognizer
+  mc.add( new Hammer.Tap({ event: 'singletap' }) );
+
+
+  // we want to recognize this simulatenous, so a quadrupletap will be detected even while a tap has been recognized.
+  mc.get('doubletap').recognizeWith('singletap');
+  // we only want to trigger a tap, when we don't have detected a doubletap
+  mc.get('singletap').requireFailure('doubletap');
+
+
+  mc.on("doubletap", function(ev) {
+      var myElement = document.getElementById('main-img');
+      resizeImg(myElement);
+  });
+
 }

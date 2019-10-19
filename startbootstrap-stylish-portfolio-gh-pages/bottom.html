@@ -59,7 +59,7 @@
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
       $( "#yearFrom" ).val(  + $( "#slider-range" ).slider( "values", 0 )  );
       $( "#yearTo" ).val(  + $( "#slider-range" ).slider( "values", 1 )  );
-      
+
     } );
     </script>
 
@@ -76,17 +76,17 @@ border-right: 1px solid #dee2e6;
 }
 </style>
 
-<body id="page-top">
+<body id="page-top" onload="hammer()">
     <div style="padding: 20px;"></div>
     <div class="container">
         <div class="row">
-            <div class="col-1">
+            <div class="col-12" id="imageContainer">
+                <img  alt="W3Schools" id="main-img"  touchstart="getPos(event)" touchend="stopTracking()" onmousemove="getPos(event)" onmouseout="stopTracking()" src="img/ee-map.PNG" >
             </div>
-            <div class="col-10">
-                <img  alt="W3Schools" id="main-img" src="img/ee-map.PNG" class="img-fluid">
             </div>
-            <div class="col-1">
-            </div>
+            <div class="row">
+              <div id="xCo">0</div>
+              <div id="yCo">0</div>
         </div>
         <div class="row">
             <div class="col-1">
