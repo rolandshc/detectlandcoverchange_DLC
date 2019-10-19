@@ -52,12 +52,14 @@
           $( "#yearRange" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
           $( "#yearFrom" ).val( ui.values[ 0 ]);
           $( "#yearTo" ).val(  ui.values[ 1 ]);
+          toggle_year()
         }
       });
       $( "#yearRange" ).val(  + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
       $( "#yearFrom" ).val(  + $( "#slider-range" ).slider( "values", 0 )  );
       $( "#yearTo" ).val(  + $( "#slider-range" ).slider( "values", 1 )  );
+      
     } );
     </script>
 
@@ -78,25 +80,25 @@ border-right: 1px solid #dee2e6;
     <div style="padding: 20px;"></div>
     <div class="container">
         <div class="row">
-          <div class="col-1">
-          </div>
+            <div class="col-1">
+            </div>
             <div class="col-10">
                 <img  alt="W3Schools" id="main-img" src="img/ee-map.PNG" class="img-fluid">
             </div>
             <div class="col-1">
             </div>
-    </div>
-            <div class="row">
-              <div class="col-1">
-              </div>
-                <div class="col-11">
-                  <ul class="ks-cboxtags">
-              <li><input type="checkbox" id="chkbox1" value="Forrest"><label for="chkbox1">Forrest</label></li>
-                <li><input type="checkbox" id="chkbox2" value="Water"><label for="chkbox2">Water</label></li>
-                  <li><input type="checkbox" id="chkbox3" value="City"><label for="chkbox3">City</label></li>
-            </ul>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
             </div>
+            <div class="col-11">
+                <ul class="ks-cboxtags">
+                    <li><input type="checkbox" id="chkbox1" value="Forrest" onclick="toggle_map()"><label for="chkbox1">Forrest</label></li>
+                    <li><input type="checkbox" id="chkbox2" value="Water"><label for="chkbox2">Water</label></li>
+                    <li><input type="checkbox" id="chkbox3" value="City"><label for="chkbox3">City</label></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="container">
