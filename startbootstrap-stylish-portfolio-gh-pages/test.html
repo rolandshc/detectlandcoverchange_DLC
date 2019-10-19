@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <link href="css/image_change.css" rel="stylesheet">
+
+    <title>Land Cover Change Detection</title>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+<script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 2010,
+      max: 2017,
+      values: [ 2010, 2017 ],
+      slide: function( event, ui ) {
+        $( "#yearRange" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+        $( "#yearFrom" ).val( ui.values[ 0 ]);
+        $( "#yearTo" ).val(  ui.values[ 1 ]);
+      }
+    });
+    $( "#yearRange" ).val(  + $( "#slider-range" ).slider( "values", 0 ) +
+      " - " + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#yearFrom" ).val(  + $( "#slider-range" ).slider( "values", 0 )  );
+    $( "#yearTo" ).val(  + $( "#slider-range" ).slider( "values", 1 )  );
+  } );
+  </script>
+
+
+</head>
+
+<body>
+  <div>
+    <div class="container">
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+      <img src="img/example_image.jpg" alt="Smiley face" height="100%" width="100%"/>
+    </div>
+    <div class="col-1">
+    </div>
+    </div>
+
+    <div>
+
+    </div>
+
+
+<div class="container">
+  <p>
+  <label for="yearRange">Year Comparison</label>
+  <input type="text" id="yearRange" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  <input type="text" id="yearFrom" style="display:none;" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  <input type="text" id="yearTo" style="display:none;" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+
+<div id="slider-range"></div>
+</div>
+
+
+</body>
+</html>
