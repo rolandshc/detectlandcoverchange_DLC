@@ -71,10 +71,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 {
   width: 300px;
   height: 200px;
-  overflow: auto;
+  overflow: scroll;
 }
 
 #main-img
 {
   height: 200px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }

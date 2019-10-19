@@ -84,18 +84,15 @@ function resizeImg (img)
                   var newHvalue   = origH * (resize / 100);
                   var newWvalue   = origW * (resize / 100);
                   	// Set the new width and height
-              		img.style.height = newH;
-              		img.style.width  = newW;
+                    img.style.height = newH;
+                    img.style.width  = newW;
+
               	//	var c = img.parentNode;
                 var left = mouseX * (resize / 100) - (newHvalue / 2) / 2;
                 var top = mouseY * (resize / 100) - (newWvalue / 2) / 2;
                   document.getElementById('imageContainer').scrollLeft = left;
                   document.getElementById('imageContainer').scrollTop = top;
               		// Work out the new center
-              	//	c.scrollLeft = mouseX * (resize / 100) - (newW / 2) / 2;
-              		//c.scrollTop  = mouseY * (resize / 100) - (newH / 2) / 2;
-                  //c.scrollLeft = "400px";
-                  //c.scrollTop  = "0px";
 
                 }
 
