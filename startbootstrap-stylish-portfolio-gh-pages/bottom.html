@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -20,6 +20,46 @@
 
   <!-- Custom CSS -->
   <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+
+  <script src="js/my.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/hammer.js"></script>
+
+
+  <!-- jquery ui slider script-->
+  <script>
+
+    $( function() {
+      $( "#slider-range" ).slider({
+        range: true,
+        min: 2010,
+        max: 2017,
+        values: [ 2010, 2017 ],
+        slide: function( event, ui ) {
+          $( "#yearRange" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+          $( "#yearFrom" ).val( ui.values[ 0 ]);
+          $( "#yearTo" ).val(  ui.values[ 1 ]);
+        }
+      });
+      $( "#yearRange" ).val(  + $( "#slider-range" ).slider( "values", 0 ) +
+        " - " + $( "#slider-range" ).slider( "values", 1 ) );
+      $( "#yearFrom" ).val(  + $( "#slider-range" ).slider( "values", 0 )  );
+      $( "#yearTo" ).val(  + $( "#slider-range" ).slider( "values", 1 )  );
+    } );
+    </script>
 
 </head>
 <style>
@@ -38,14 +78,36 @@ border-right: 1px solid #dee2e6;
     <div style="padding: 20px;"></div>
     <div class="container">
         <div class="row">
-            <div class="col-8">
+          <div class="col-1">
+          </div>
+            <div class="col-10">
                 <img  alt="W3Schools" id="main-img" src="img/ee-map.PNG" class="img-fluid">
             </div>
-            <div class="col-4">
-                <div id='main-number'>...</div>
-                <div class='btn' onclick="test_toggle()">forrest</div>
+            <div class="col-1">
             </div>
     </div>
+            <div class="row">
+              <div class="col-1">
+              </div>
+                <div class="col-11">
+                  <ul class="ks-cboxtags">
+              <li><input type="checkbox" id="chkbox1" value="Forrest"><label for="chkbox1">Forrest</label></li>
+                <li><input type="checkbox" id="chkbox2" value="Water"><label for="chkbox2">Water</label></li>
+                  <li><input type="checkbox" id="chkbox3" value="City"><label for="chkbox3">City</label></li>
+            </ul>
+                </div>
+            </div>
+    </div>
+
+    <div class="container">
+      <p>
+      <label for="yearRange">Year Comparison</label>
+      <input type="text" id="yearRange" readonly style="border:0; color:#f6931f; font-weight:bold;">
+      <input type="text" id="yearFrom" style="display:none;" readonly style="border:0; color:#f6931f; font-weight:bold;">
+      <input type="text" id="yearTo" style="display:none;" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    </p>
+
+    <div id="slider-range"></div>
     </div>
     <div class="container">
         <table class="table table-hover">
@@ -74,7 +136,7 @@ border-right: 1px solid #dee2e6;
                         <div id="accordion3" class="collapse custom_card" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
     </div>
@@ -84,17 +146,6 @@ border-right: 1px solid #dee2e6;
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/stylish-portfolio.min.js"></script>
-
-  <script src="js/my.js"></script>
 
 
 </body>
