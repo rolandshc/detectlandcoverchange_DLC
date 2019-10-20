@@ -38,7 +38,7 @@ function toggle_map(e){
         e.classList.remove("active");
     }
     console.log(e.innerHTML)
-    
+
     document.getElementById('main-img').src=img_list[counter % img_list.length]
     // document.getElementById('main-number').innerHTML=img_number[counter % img_list.length]
     counter++
@@ -77,13 +77,13 @@ function resizeImg (img)
                 var orignH = document.getElementById('main-img').clientHeight
                 if (orignW > 400 || orignH > 300)
                 {
-                  img.style.height = "200px";
-                  img.style.width  = "350px";
+                  img.style.height = "250px";
+                  img.style.width  = "100%";
                 }
                 else {
                   var resize = 550; // resize amount in percentage
-              		var origH  = 200;  // original image height
-              		var origW  = 300; // original image width
+              		var origH  = 250;  // original image height
+              		var origW  = 350; // original image width
               		var mouseX = parseInt(document.getElementById("xCo").innerHTML);
               		var mouseY = parseInt(document.getElementById("yCo").innerHTML);
               		//var newH   = origH * (resize / 100) + "px";

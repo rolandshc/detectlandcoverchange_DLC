@@ -69,14 +69,18 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 #imageContainer
 {
-  width: 300px;
-  height: 200px;
+ /*   width: 300px;
+  height: 200px; */
+  width: 400px;
+  height: 250px;
   overflow: scroll;
 }
 
 #main-img
 {
-  height: 200px;
+ /*   height: 200px; */
+  height: 250px;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -108,4 +112,9 @@ header{
 height:8%;
 width:10%;
 margin-right:5%;
+}
+
+.content-section
+{
+      padding-top: 3.5rem!important;
 }
