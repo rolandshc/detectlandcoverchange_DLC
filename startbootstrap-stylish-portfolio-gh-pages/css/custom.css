@@ -87,3 +87,19 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 html{
   scroll-behavior: smooth;
 }
+
+header{
+  background-image: url('../img/background.jpg')!important;
+}
+
+.mb-1{
+  color: white
+}
+
+.mb-5{
+  color: white
+}
+
+.masthead{
+  min-height: 50rem!important;
+}
